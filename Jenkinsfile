@@ -4,14 +4,13 @@ pipeline {
     stages {
         stage('Compile Project') {
             steps {
-                // This builds the project structure and downloads necessary parts
-                sh 'mvn clean compile'
+                // Changing 'sh' to 'bat' makes it run correctly on Windows servers
+                bat 'mvn clean compile'
             }
         }
         stage('Run Tests') {
             steps {
-                // This runs the JUnit verification tests you wrote earlier
-                sh 'mvn test'
+                bat 'mvn test'
             }
         }
     }
